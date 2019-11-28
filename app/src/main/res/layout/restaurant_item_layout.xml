@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView
+    xmlns:cardview = "http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/restaurant_cardview"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:foreground="?android:selectableItemBackground"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp"
+    cardview:cardCornerRadius="10dp"
+    cardview:cardBackgroundColor="#fefefe"
+    cardview:elevation="2dp"
+    cardview:contentPadding="5dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/res_image"
+            android:layout_width="150px"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@mipmap/ic_launcher" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/res_image">
+
+            <RelativeLayout
+                android:id="@+id/header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/res_name"
+                        android:layout_width="210dp"
+                        android:layout_height="wrap_content"
+                        android:text="res_name"
+                        android:textColor="@android:color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/res_rate_cardview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:foreground="?android:selectableItemBackground"
+                        android:layout_marginLeft="10dp"
+                        cardview:cardCornerRadius="10dp"
+                        cardview:cardBackgroundColor="#ff0000"
+                        cardview:contentPadding="5dp">
+                        <RelativeLayout
+                            android:id="@+id/res_rate_group"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/res_name"
+                            android:layout_alignParentRight="true"
+                            android:gravity="center">
+
+                            <TextView
+                                android:id="@+id/res_rate"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_toLeftOf="@+id/res_rate_star"
+                                android:gravity="center"
+                                android:text="res_rate"
+                                android:textColor="#FFFFFF"
+                                android:textStyle="bold"
+                                android:textSize="16sp" />
+
+                            <ImageView
+                                android:id="@+id/res_rate_star"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginLeft="3dp"
+                                android:src="@drawable/icon_star" />
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/res_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/header"
+                android:text="ประเภท: "
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/res_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/res_type"
+                android:text="ราคา: "
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/res_review_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/res_price"
+                android:text="รีวิว: "
+                android:textSize="16sp" />
+        </RelativeLayout>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
